@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background: #000;  /* Complete black background */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: black;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 35px;
+    color: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+.experience-section {
+    margin-top: 100px;
+    padding: 50px 10%;
+    background: #000;
+    text-align: center;
+    overflow: hidden; /* Ensures animations are contained */
+}
+
+.experience-section h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Start with one column */
+    gap: 20px; /* Spacing between items */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease, transform 0.3s; /* Adds hover effect */
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item i {
+    font-size: 30px;
+    color: #0ef;
+    margin-right: 10px; /* Space between icon and content */
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover i {
+    transform: scale(1.2); /* Icon scales up on hover */
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+    color: #0ef;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.timeline-content span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.timeline-item:hover {
+    background: #333; /* Changes background slightly on hover */
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.timeline-item.active {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Adjusted for smoother animation */
+}
+
+/* Layout for 2 items per row starting from the second row */
+.timeline-item:nth-child(n + 2) {
+    grid-column: span 1; /* Each item from the second onward takes up one column */
+}
+
+.timeline-item:nth-child(1) {
+    grid-column: span 2; /* First item takes up full width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        z-index: 99;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        font-size: 25px;
+        margin: 20px 0;
+        color: rgb(253, 250, 250);
+    }
+
+    .timeline {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
+
+    .timeline-item {
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+}

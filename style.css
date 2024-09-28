@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background-color: black; /* Sets the background of the entire page to black */
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: black;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 35px;
+    color: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: black;
+        z-index: 1;
+    }
+
+    .navbar a {
+        margin: 15px 0;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+}
+
+.Home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    padding: 70px 10% 0;
+}
+
+.Home-content {
+    max-width: 600px;
+    color: white;
+}
+
+.Home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 1%;
+}
+
+.Home-content h3:nth-of-type(2) {
+    margin-bottom: 1px;
+}
+
+.Home-content h3 span {
+    color: #0ef;
+}
+
+.Home-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: -3px 0;
+}
+
+.Home-content p {
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    color: #0ef;
+}
+
+.home-sci a:hover {
+    background-color: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.parent {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right on larger screens */
+    align-items: center;
+    height: 100%;
+    margin-right: 2%;
+}
+
+.parent img {
+    width: 80%; /* Default width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .Home {
+        flex-direction: column; /* Stack content and image vertically */
+    }
+
+    .parent {
+        justify-content: center; /* Center image horizontally */
+        margin-bottom: 20px; /* Space between image and content */
+        width: 100%; /* Full width for image */
+    }
+
+    .Home-content {
+        order: 1; /* Ensure content appears after image */
+        max-width: 100%; /* Full width for content on smaller screens */
+    }
+
+    .parent img {
+        width: 100%; /* Full width for image on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .parent img {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .parent img {
+        width: 100%; /* Full width for very small screens */
+    }
+}
+
+.Download-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: white;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+.Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+}
+
+.Download-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #3b82f6;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #3b82f6;
+}
+
+.Download-button::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.Download-button::after {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+}
+
+.Download-button:hover::before,
+.Download-button:hover::after {
+    height: 60%;
+}
+
+.Download-button:hover::before {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transform: translate(5px, -15px) rotate(45deg);
+}
+
+.Download-button:hover::after {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transform: translate(-5px, 15px) rotate(45deg);
+}
+
+
+.footer, .parent, .other-sections {
+    background-color: black; /* Sets background to black for any other sections */
+}
