@@ -7,18 +7,10 @@
     <link rel="stylesheet" href="contact.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Contact Us</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "BUJvebvLrlrHB92QU",
-            });
-        })();
-    </script>
 </head>
 
 <body>
+    <!-- Header Section -->
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
         <nav class="navbar">
@@ -33,39 +25,43 @@
         </div>
     </header>
 
+    <!-- Contact Section -->
     <section class="contact-section">
         <h2>Contact <span>Us</span></h2>
         <div class="contact-container">
-            <form action="#" class="contact-form">
+            <!-- Updated Contact Form -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="731d689a-ea2c-4310-8fa4-d21919d7b82a">
+
                 <div class="input-box">
-                    <input type="text" required>
+                    <input type="text" name="name" required>
                     <label>Full Name</label>
                 </div>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" name="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <textarea required></textarea>
+                    <textarea name="message" required></textarea>
                     <label>Your Message</label>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
+
+            <!-- Contact Info Section -->
             <div class="contact-info">
                 <h3>Get In Touch</h3>
-                <p>Feel free to reach out via social media or email for any inquiries or collaboration opportunities.
-                </p>
+                <p>Feel free to reach out via social media or email for any inquiries or collaboration opportunities.</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/akash-penagonda-29bb622a7"><i class='bx bxl-linkedin'></i></a>
                     <a href="https://github.com/Akashpenagonda"><i class='bx bxl-github'></i></a>
-                    <a href=""><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
                     <a href="#"><i class='bx bxl-instagram'></i></a>
                 </div>
             </div>
         </div>
     </section>
-
-    <script src="contact.js"></script>
 </body>
 
 </html>
